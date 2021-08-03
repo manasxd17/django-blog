@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10">
+  <h3 class="white-text my-5">BLOG  SPOT !</h3>
+  {% if posts %}
+  {% for post in posts %}
+  <div class="jumbotron jumbotron-fluid jumbo-style">
+    <div class="container">
+      <h1 class="display-4" style="font-weight: bold;">{{post.title}}</h1>
+        <p class="lead">{{post.desc}}</p>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+  {% else %}
+  <h3>There are no blogs right now! Create one by signing up!</h3>
+  {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10">
+    <h3 class="White-text my-5">Add your content</h3>
+    <div>
+        <form action="", method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-success" value="Add blog" type="submit">
+            <a class="btn btn-danger" href="{% url 'dashboard' %}">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

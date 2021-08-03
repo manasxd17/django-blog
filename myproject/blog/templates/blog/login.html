@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <br>
+    {% if messages %}
+    {% for message in messages %}
+        <h2 style="color: antiquewhite;">{{message}}</h2>
+    {% endfor %}
+    {% endif %}
+    <form action="", method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Login">
+    </form>
+</div>
+{% endblock content %}

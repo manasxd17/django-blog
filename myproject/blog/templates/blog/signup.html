@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <br>
+    <h5 class="white-text my-5">Become an author</h5>
+    {% if messages %}
+    {% for message in messages %}
+        <h2 style="color: antiquewhite;">{{message}}</h2>
+    {% endfor %}
+    {% endif %}
+    <form action="", method="POST" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    
+</div>
+{% endblock content %}
